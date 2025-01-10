@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 15px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header .info {
+            flex-grow: 1;
+        }
+
+        .profile-header h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #0056b3;
+        }
+
+        .profile-header p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 5px;
+        }
+
+        .section p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button-group a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            background-color: #0056b3;
+            transition: all 0.3s ease;
+        }
+
+        .button-group a:hover {
+            background-color: #004494;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-header img {
+                margin-bottom: 15px;
+            }
+
+            .profile-header h2 {
+                font-size: 24px;
+            }
+
+            .profile-header p {
+                font-size: 14px;
+            }
+
+            .section h3 {
+                font-size: 18px;
+            }
+
+            .section p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>User Profile</h1>
+    </header>
+
+    <div class="container">
+        <div class="profile-header">
+            <img src="profile1.jpg" alt="Profile Picture">
+            <div class="info">
+                <h2>Nimeshh Shrestha</h2>
+                <p>Student at Shankerdev Campus, pursuing Bachelor of Information Management (BIM).</p>
+                <p>Based in Lalitpur, originally from Damak.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>About Me</h3>
+            <p>
+                I am a passionate student currently pursuing my degree in BIM at Shankerdev Campus. 
+                With a keen interest in coding and technology !!!
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Skills</h3>
+            <p>
+                - Programming Languages: C, Python, JavaScript<br>
+                - Web Development: HTML, CSS, React<br>
+                - Database Management: MySQL<br>
+                - Problem-Solving and Analytical Thinking
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Contact Information</h3>
+            <p>
+                Email: nimeshhinfotech@gmail.com<br>
+                Phone: +977-XXXXXXXXXX<br>
+                LinkedIn: <a href="https://www.linkedin.com/in/nimesh-shrestha-99b338335/" target="_blank">linkedin.com/in/your-profile</a>
+            </p>
+        </div>
+
+        <div class="button-group">
+            <a href="edit-profile.html">Edit Profile</a>
+            <a href="dashboard.html">Go to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

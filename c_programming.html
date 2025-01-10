@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming - E-Learn App</title>
+  <style>
+    
+        .content-in-progress {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff5722;
+            background-color: #fff3e0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            border: 2px dashed #ff5722;
+        }
+    
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #0056b3;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #004494;
+    }
+
+    .container {
+      margin: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 24px;
+      color: #0056b3;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    ul li {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      color: #0056b3;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .cta-button {
+      padding: 12px 25px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      display: block;
+      margin: 30px auto;
+    }
+
+    .cta-button:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+
+      p, ul li {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>E-Learn App</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="c_programming.html">C Programming</a>
+      <a href="courses.html">Courses</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>C Programming</h2>
+    <p>Welcome to the C Programming course! C is a powerful, general-purpose programming language widely used for system programming and creating applications. It provides low-level access to memory, making it a preferred choice for system and embedded programming.</p>
+    
+    <h3>Why Learn C Programming?</h3>
+    <p>C programming is the foundation for learning other programming languages and plays a significant role in understanding how software interacts with hardware. Some key benefits of learning C programming include:</p>
+    <ul>
+      <li>Improved understanding of how computers work at a low level.</li>
+      <li>Enhanced problem-solving skills.</li>
+      <li>Ability to work with high-performance applications and embedded systems.</li>
+      <li>Helps in learning other programming languages like C++, Java, and Python.</li>
+    </ul>
+
+    <h3>Topics Covered in This Course:</h3>
+    <ul>
+      <li>Introduction to C programming language</li>
+      <li>Data types, variables, and constants</li>
+      <li>Operators in C</li>
+      <li>Control flow (if-else, loops)</li>
+      <li>Functions and recursion</li>
+      <li>Arrays and strings</li>
+      <li>Pointers and memory management</li>
+      <li>Structures and unions</li>
+      <li>File handling</li>
+      <li>Dynamic memory allocation</li>
+    </ul>
+
+    <h3>Code Examples:</h3>
+    
+    <div class="card">
+        <h3>1. WAP to print the text 'Hello future Developer'</h3>
+        <pre>
+            #include <stdio.h>
+                int main()
+                 {
+                    printf("Hello future Developer");
+
+                    return 0;
+                 }
+            
+            </pre>
+            </div>
+    <div class="card">
+        <h3>2. WAP in C to input two number and find the sum</h3>
+        <pre>
+                        #include<stdio.h>
+                
+                            int main()
+                            {
+                                int num1, num2;
+    
+                                printf("Enter first number: ");
+                                scanf("%d", &num1);
+    
+                                printf("Enter second number: ");
+                                scanf("%d", &num2);
+    
+                                int sum = num1 + num2;
+                                printf("Sum of two numbers = %d", sum);
+    
+                                return 0;
+                            }
+                        
+                        </pre>
+                        </div>
+    <div class="card">
+        <h3>3. WAP to find the area of the rectangular garden</h3>
+        <pre>
+            #include<stdio.h>
+
+                int main()
+                {
+                    int length, breadth;
+
+                    printf("Enter the length of the garden: ");
+                    scanf("%d", &length);
+
+                    printf("Enter the breadth of the garden: ");
+                    scanf("%d", &breadth);
+
+                    int area = length * breadth;
+                    printf("Area of the garden = %d", area);
+
+                    return 0;
+                    
+                }
+    
+           
+                                
+          </pre>
+          </div>
+     <div class="card">
+      <h3>4. WAP to find the area of the circle</h3>
+            <pre>
+                #include<stdio.h>
+
+                    int main()
+                    {
+                        float radius;
+                        float pi = 3.14;
+
+                        printf("Enter the radius of the circle: ");
+                        scanf("%f", &radius);
+
+                        float area = pi * radius * radius;
+                        printf("Area of the circle = %f", area);
+
+                        return 0;
+                    }
+
+                
+                                   
+             </pre>
+             </div>
+
+     <div class="card">
+       <h3>5. WAP to find the area of the triangle</h3>
+           <pre>
+            #include<stdio.h>
+
+                int main()
+                {
+                    float base, height;
+                    float area;
+                    float pi = 3.14;
+
+                    printf("Enter the base of the triangle: ");
+                    scanf("%f", &base);
+
+                    printf("Enter the height of the triangle: ");
+                    scanf("%f", &height);
+
+                    area = 0.5 * base * height;
+                    printf("Area of the triangle = %f", area);
+
+                    return 0;
+                }
+                                       
+                 </pre>
+                 </div>
+    <div class="card">
+        <h3>6. WAP to check whether the number is odd or even</h3>
+        <pre>
+                #include<stdio.h>
+    
+                    int main()
+                    {
+                        int num;
+    
+                        printf("Enter the number: ");
+                        scanf("%d", &num);
+    
+                        if(num % 2 == 0)
+                        {
+                        printf("%d is even", num);
+                        }
+                        else
+                        {
+                        printf("%d is odd", num);
+                        }
+                        return 0;
+    
+                    }
+                                   
+            </pre>
+            </div>
+            <div class="card">
+                <h3>7. WAP to find the maximum and minimum of three numbers</h3>
+                <pre>
+            #include<stdio.h>
+                        
+            int main()
+            {
+            int num1, num2, num3;
+                        
+            printf("Enter the first number: ");
+            scanf("%d", &num1);
+                        
+            printf("Enter the second number: ");
+            scanf("%d", &num2);
+                        
+            printf("Enter the third number: ");
+            scanf("%d", &num3);
+                        
+            if(num1 > num2 && num1 > num3)
+            {
+            printf("%d is the maximum number", num1);
+            printf("%d is the minimum number", num3);
+            }
+            else if(num2 > num3 && num2 > num3)
+            {
+            printf("%d is the maximum number", num2);
+            printf("%d is the minimum number", num3);
+            }
+            else
+            {
+            printf("%d is the maximum number", num3);
+            printf("%d is the minimum number", num1);
+            }
+            return 0;           
+                                    
+            }
+                                                               
+            </pre>
+            </div>
+            
+            <div class="card">
+            <h3>8. WAP to input number and check whether the number is prime or composite</h3>
+            <pre>
+            #include<stdio.h>
+                            
+            int main()
+            {
+            int num , c=0;
+                                                        
+            printf("Enter the number: \n");
+            scanf("%d",&num);
+                            
+            for(int i=1;i<=num;i++)
+            {
+            if(num % i == 0)
+            c++;
+            }
+            if(c==2)
+            {
+            printf("%d is prime",num);
+            }
+             else
+            {
+            printf("%d is composite",num);
+            }
+                            
+            return 0;
+            }
+     </pre>
+    </div>
+    <div class="card">
+        <h3>9. WAP to find the average of 'n' numbers</h3>
+        <pre>
+        #include <stdio.h>
+
+        int main() {
+        int n;
+        float num, sum = 0.0;
+                
+        printf("Enter the number of elements: ");
+        scanf("%d", &n);
+                
+        for (int i = 0; i < n; i++)
+        {
+        printf("Enter number %d: ", i + 1);
+        scanf("%f", &num);
+        sum += num;
+        }
+                
+        printf("Average = %.2f\n", sum / n);
+                
+        return 0;
+        }
+        </pre>
+    </div>
+   <div class="card">
+    <h3>10. WAP to check whether the number is +ve, -ve or 0</h3>
+    <pre>
+        #include <stdio.h>
+            int main()
+            {
+            int num;
+            printf("Enter a number: ");
+            scanf("%d", &num);
+            if(num>0)
+            {
+            printf("%d is positive",num);
+            }
+            else if(num<0) { 
+            printf("%d is negative",num);
+            } 
+            else {
+            printf("%d is zero",num);
+            } 
+            return 0; 
+           }
+
+    </pre>
+   </div>      
+   <div class="card">
+    <h3>11.WAP to count the number of vowel and constant in string</h3>
+    <pre>
+        #include <stdio.h>
+        
+            int main() {
+            char str[100];
+            int i, count = 0, count1 = 0;
+        
+            printf("Enter a string: ");
+            scanf("%s", str); // This reads a string without spaces
+        
+            for (i = 0; str[i] != '\0'; i++) {
+            if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
+            count++; // Count vowels
+            } else {
+            count1++; // Count consonants
+            }
+            }
+        
+            printf("Number of vowels = %d\n", count);
+            printf("Number of consonants = %d\n", count1);
+        
+            return 0;
+            }
+            
+    </pre>
+   </div> 
+   <div class="card">
+    <h3>12. WAP to display the reverse of the inputted number </h3>
+    <pre>
+        #include <stdio.h>
+        
+        int main() {
+            int num, reversed = 0, remainder;
+        printf("Enter a number: ");
+        scanf("%d", &num);
+        
+        while (num != 0) {
+        remainder = num % 10;
+        reversed = reversed * 10 + remainder;
+        num /= 10;
+        }
+        
+        printf("Reversed number: %d\n", reversed);
+        
+        return 0;
+            }
+            
+    </pre>
+   </div>   
+
+   <div class="card">
+    <h3>13. WAP to display the fibonacci series upto 'n' number</h3>
+    <pre>
+        #include <stdio.h>
+
+        int main() {
+        int n;
+        printf("Enter the number of terms: ");
+        scanf("%d", &n);
+            
+        int first = 0, second = 1, next;
+        printf("Fibonacci Series: %d %d ", first, second);
+            
+        for (int i = 3; i <= n; i++) {
+        next = first + second;
+        printf("%d ", next);
+        first = second;
+        second = next;
+        }
+        printf("\n");
+            
+        return 0;
+        }
+            
+            
+    </pre>
+   </div>
+
+    <!-- Array Example -->
+    <div class="card">
+      <h3>14.WAP in C Find the Largest Element in an Array</h3>
+      <pre>
+#include <stdio.h>
+
+int main() {
+    int arr[] = {2, 34, 56, 78, 12};
+    int max = arr[0];
+
+    for (int i = 1; i < 5; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    printf("The largest element is: %d", max);
+    return 0;
+}
+      </pre>
+    </div>
+
+    <!-- Function Example -->
+    <div class="card">
+      <h3>15. Simple Function to Add Two Numbers</h3>
+      <pre>
+#include <stdio.h>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(5, 3);
+    printf("The sum is: %d", result);
+    return 0;
+}
+      </pre>
+    </div>
+
+    <!-- Star Pattern Example -->
+    <div class="card">
+      <h3>16. Star Pattern - Right Angle Triangle</h3>
+      <pre>
+#include <stdio.h>
+
+int main() {
+    int n = 5;  // Number of rows
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+      </pre>
+    </div>
+
+    <!-- Structure Example -->
+    <div class="card">
+      <h3>17. WAP to Create a Structure to Store Student Information</h3>
+      <pre>
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int age;
+    float grade;
+};
+
+int main() {
+    struct Student student1 = {"John Doe", 20, 88.5};
+    
+    printf("Name: %s\n", student1.name);
+    printf("Age: %d\n", student1.age);
+    printf("Grade: %.2f\n", student1.grade);
+
+    return 0;
+}
+      </pre>
+    </div>
+
+    <div class="card">
+      <h3>18. Advanced Structure Example - Array of Structures</h3>
+      <pre>
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int age;
+    float grade;
+};
+
+int main() {
+    struct Student students[3] = {
+        {"John", 20, 88.5},
+        {"Mary", 22, 91.2},
+        {"Jake", 19, 85.4}
+    };
+
+    for (int i = 0; i < 3; i++) {
+        printf("Student %d:\n", i+1);
+        printf("Name: %s\n", students[i].name);
+        printf("Age: %d\n", students[i].age);
+        printf("Grade: %.2f\n\n", students[i].grade);
+    }
+
+    return 0;
+}
+      </pre>
+    </div>
+    <h2>19. WAP to find the factorial of a number</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int num, factorial = 1;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    for(int i = 1; i <= num; i++) {
+        factorial *= i;
+    }
+
+    printf("Factorial of %d is %d", num, factorial);
+    return 0;
+}
+</pre>
+
+<h2>20. WAP to reverse a number</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int num, reversed = 0, remainder;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    while (num != 0) {
+        remainder = num % 10;
+        reversed = reversed * 10 + remainder;
+        num /= 10;
+    }
+
+    printf("Reversed number is %d", reversed);
+    return 0;
+}
+</pre>
+
+<h2>21. WAP to check whether a number is palindrome or not</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int num, reversed = 0, original, remainder;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    original = num;
+
+    while (num != 0) {
+        remainder = num % 10;
+        reversed = reversed * 10 + remainder;
+        num /= 10;
+    }
+
+    if (original == reversed) {
+        printf("%d is a palindrome.", original);
+    } else {
+        printf("%d is not a palindrome.", original);
+    }
+
+    return 0;
+}
+</pre>
+
+<h2>22. WAP to print Fibonacci series up to 'n' terms</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int n, t1 = 0, t2 = 1, nextTerm;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci series: ");
+    for (int i = 1; i <= n; ++i) {
+        if (i == 1) {
+            printf("%d, ", t1);
+            continue;
+        }
+        if (i == 2) {
+            printf("%d, ", t2);
+            continue;
+        }
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+        printf("%d, ", nextTerm);
+    }
+
+    return 0;
+}
+</pre>
+
+<h2>23. WAP to calculate power of a number</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int base, exponent;
+    long long result = 1;
+
+    printf("Enter base: ");
+    scanf("%d", &base);
+    printf("Enter exponent: ");
+    scanf("%d", &exponent);
+
+    for (int i = 1; i <= exponent; ++i) {
+        result = result * base;
+    }
+
+    printf("%d raised to the power of %d is %lld", base, exponent, result);
+    return 0;
+}
+</pre>
+
+<h2>24. WAP to find the GCD of two numbers</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int num1, num2, gcd;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    for (int i = 1; i <= num1 && i <= num2; ++i) {
+        if (num1 % i == 0 && num2 % i == 0) {
+            gcd = i;
+        }
+    }
+
+    printf("GCD of %d and %d is %d", num1, num2, gcd);
+    return 0;
+}
+</pre>
+
+<h2>25. WAP to find the LCM of two numbers</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int num1, num2, lcm;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    lcm = (num1 > num2) ? num1 : num2;
+
+    while (1) {
+        if (lcm % num1 == 0 && lcm % num2 == 0) {
+            printf("LCM of %d and %d is %d", num1, num2, lcm);
+            break;
+        }
+        ++lcm;
+    }
+
+    return 0;
+}
+</pre>
+
+<h2>26. WAP to count digits in a number</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int num, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    while (num != 0) {
+        num /= 10;
+        ++count;
+    }
+
+    printf("Number of digits: %d", count);
+    return 0;
+}
+</pre>
+
+<h2>27. WAP to find the sum of digits of a number</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0, remainder;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    while (num != 0) {
+        remainder = num % 10;
+        sum = sum + remainder;
+        num = num / 10;
+    }
+
+    printf("Sum of digits: %d", sum);
+    return 0;
+}
+</pre>
+
+<h2>28. WAP to print a multiplication table of a number</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Multiplication table of %d:\n", num);
+    for (int i = 1; i <= 10; ++i) {
+        printf("%d * %d = %d\n", num, i, num * i);
+    }
+
+    return 0;
+}
+</pre>
+
+<h2>29. WAP to check if a number is a perfect number</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    for (int i = 1; i < num; ++i) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+
+    if (sum == num) {
+        printf("%d is a perfect number.", num);
+    } else {
+        printf("%d is not a perfect number.", num);
+    }
+
+    return 0;
+}
+</pre>
+
+<h2>30. WAP to find the ASCII value of a character</h2>
+<pre>
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    printf("ASCII value of %c = %d", ch, ch);
+    return 0;
+}
+</pre>
+   
+<div class="content-in-progress">
+    Content in Progress
+</div>
+
+
+    <h3>Resources:</h3>
+    <div class="card">
+      <h3>Interactive C Programming Tutorials</h3>
+      <p>Explore interactive tutorials that help you practice C programming concepts with real-time code execution.</p>
+      <a href="https://www.learn-c.org/" target="_blank" class="cta-button">Start Learning</a>
+    </div>
+
+    <div class="card">
+      <h3>C Programming Online Compiler</h3>
+      <p>Write, compile, and run C programs online without installing any software. It's an excellent way to practice C coding anywhere.</p>
+      <a href="https://www.onlinegdb.com/online_c_compiler" target="_blank" class="cta-button">Try the Compiler</a>
+    </div>
+
+    <div class="card">
+      <h3>Books and References</h3>
+      <p>Here are some highly recommended books to deepen your understanding of C programming:</p>
+      <ul>
+        <li><b>The C Programming Language</b> by Brian W. Kernighan and Dennis M. Ritchie</li>
+        <li><b>C Programming: A Modern Approach</b> by K. N. King</li>
+        <li><b>Head First C</b> by David Griffiths and Dawn Griffiths</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p style="text-align: center; margin-top: 40px;">&copy; 2025 E-Learn App. All rights reserved.</p>
+  </footer>
+</body>
+</html>
